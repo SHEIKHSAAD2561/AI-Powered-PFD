@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AI-Powered-PFD:build:production"
+              "buildTarget": "AI-Powered-PFD:build:production"
             },
             "development": {
-              "browserTarget": "AI-Powered-PFD:build:development"
+              "buildTarget": "AI-Powered-PFD:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AI-Powered-PFD:build"
+            "buildTarget": "AI-Powered-PFD:build"
           }
         },
         "test": {
