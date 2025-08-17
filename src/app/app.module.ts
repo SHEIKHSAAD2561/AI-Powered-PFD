@@ -15,7 +15,7 @@ import { HomeComponent } from './areas/home/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthenticationAndAuthorizationModule
+    AuthenticationAndAuthorizationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

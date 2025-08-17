@@ -1,0 +1,38 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-left">
+      <button class="burger-menu-btn"  (click)="toggleSidebar()">
+        ☰
+      </button>
+      <div class="logo">
+        <div class="logo-icon">📈</div>
+        <span>FinanceAI</span>
+      </div>
+    </div>
+    <div class="user-profile">
+      <div class="profile-info">
+        <span class="user-name">John Doe</span>
+        <span class="user-role">Administrator</span>
+      </div>
+      <div class="profile-avatar">JD</div>
+    </div>
+  </header>
+
+  <aside class="dashboard-sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" class="nav-item active">Dashboard</a></li>
+        <li><a href="#" class="nav-item">Account</a></li>
+        <li><a href="#" class="nav-item">Expenses</a></li>
+        <li><a href="#" class="nav-item">Budgeting</a></li>
+        <li><a href="#" class="nav-item">Reports</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content" id="main-content">
+    <app-dashboard-details></app-dashboard-details>
+    <!-- <h2>Dashboard Overview</h2>
+    <p>Welcome to your FinanceAI dashboard. Select an item from the menu to get started.</p> -->
+  </main>
+</div>

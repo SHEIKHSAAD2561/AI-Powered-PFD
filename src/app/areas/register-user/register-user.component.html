@@ -1,0 +1,95 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="signup-page">
+    <div class="signup-card">
+        <div class="signup-header">
+            <h2>Create Account</h2>
+            <p>Start your journey to financial freedom</p>
+        </div>
+        <form class="signup-form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="John" required ngModel
+                        #firstName="ngModel">
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="validation-error">
+                        First name is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Doe" required ngModel
+                        #lastName="ngModel">
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="validation-error">
+                        Last name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required email ngModel
+                    #email="ngModel">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="validation-error">
+                    <div *ngIf="email.errors?.['required']">Email is required.</div>
+                    <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-input">
+                    <input type="password" id="password" [type]="showPassword ? 'text' : 'password'" name="password"
+                        required minlength="6" ngModel #password="ngModel">
+                    <span class="password-toggle" (click)="togglePasswordVisibility()">
+                        <span *ngIf="!showPassword">👁️</span>
+                        <span *ngIf="showPassword">👁️‍🗨️</span>
+                    </span>
+                </div>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="validation-error">
+                    <div *ngIf="password.errors?.['required']">Password is required.</div>
+                    <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="password-input">
+                    <input type="password" [type]="showPassword ? 'text' : 'password'" id="confirm-password"
+                        name="confirmPassword" required ngModel #confirmPassword="ngModel">
+                    <span class="password-toggle" (click)="togglePasswordVisibility()">
+                        <span *ngIf="!showPassword">👁️</span>
+                        <span *ngIf="showPassword">👁️‍🗨️</span>
+                    </span>
+                </div>
+                <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+                    class="validation-error">
+                    Passwords do not match.
+                </div>
+            </div>
+            <div class="form-options">
+                <label class="checkbox-container">I agree to the <a href="#">Terms of Service</a> and <a
+                        href="#">Privacy Policy</a>
+                    <input type="checkbox" name="terms" required ngModel #terms="ngModel">
+                    <span class="checkmark"></span>
+                </label>
+                <div *ngIf="terms.invalid && (terms.dirty || terms.touched)" class="validation-error">
+                    You must accept the terms.
+                </div>
+                <label class="checkbox-container">Send me updates about new features and financial tips
+                    <input type="checkbox" name="updates" ngModel>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="submit" class="cta-button" [disabled]="!signupForm.valid">Create Account</button>
+        </form>
+        <div class="features-list">
+            <h4>What you'll get:</h4>
+            <ul>
+                <li>AI-powered expense tracking</li>
+                <li>Real-time currency conversion</li>
+                <li>Personalized financial insights</li>
+                <li>Secure data encryption</li>
+            </ul>
+        </div>
+        <div class="already-account-link">
+            Already have an account? <a href="#">Sign in</a>
+        </div>
+    </div>
+</div>

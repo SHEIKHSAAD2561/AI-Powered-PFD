@@ -8,6 +8,14 @@ const routes: Routes = [
     loadChildren :() => import ("./modules/Authentication&Authorization/authentication-and-authorization.module").then((m)=> m.AuthenticationAndAuthorizationModule)
   },
   {
+    path:"register-user",
+    loadChildren :() => import ("./modules/register/register-user.module").then((m)=> m.RegisterUserModule)
+  },
+  {
+    path:"dashboard",
+    loadChildren :() => import ("./modules/dashboard/dashboard.module").then((m)=> m.DashboardModule)
+  },
+  {
     path:'', component:HomeComponent, pathMatch:'full'
   }
 ];

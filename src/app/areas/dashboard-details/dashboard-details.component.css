@@ -1,0 +1,47 @@
+<div class="dashboard-main-content">
+  <div class="card-grid">
+    <div class="card expenses-card">
+      <div class="card-title">Total Expenses</div>
+      <div class="card-value">$3,450</div>
+      <div class="card-change">4.5% from last month</div>
+    </div>
+    <div class="card savings-card">
+      <div class="card-title">Total Savings</div>
+      <div class="card-value">$1,200</div>
+    </div>
+    <div class="card category-card">
+      <div class="card-title">Biggest Expense Category</div>
+      <div class="card-value">Food</div>
+      <div class="card-change">30% of budget</div>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Expenses by Category</h3>
+      <canvas baseChart [data]="doughnutChartData" [type]="'doughnut'" [options]="doughnutChartOptions"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Spending Trend</h3>
+      <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="'line'"></canvas>
+    </div>
+  </div>
+
+  <div class="extra-grid">
+    <div class="budget-card">
+      <h3>Budget Usage</h3>
+      <div class="budget-item">
+        <div class="budget-label">Food</div>
+        <div class="budget-bar"><span style="width: 80%;"></span></div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">Bills</div>
+        <div class="budget-bar"><span style="width: 60%;"></span></div>
+      </div>
+      <div class="budget-item">
+        <div class="budget-label">Travel</div>
+        <div class="budget-bar"><span style="width: 90%;"></span></div>
+      </div>
+    </div>
+    </div>
+</div>

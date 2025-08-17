@@ -1,55 +1,53 @@
-.login-page-container {
-  width: 35%;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f0f8f0;
+  margin: 0;
+  /* Key properties for centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the body fills the entire viewport height */
+}
+.signup-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
-  /* Add these properties to the container itself if the body style isn't working */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto; /* A fallback */
 }
 
-.back-link {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.back-link a {
-  color: #4CAF50;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.back-link a:hover {
-  text-decoration: underline;
-}
-
-.login-card {
+.signup-card {
   background-color: #f7f9f7;
   border: 1px solid #e0e0e0;
-  margin-top: 100px;
   border-radius: 12px;
   padding: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.card-header h2 {
+.signup-header h2 {
   font-size: 1.8rem;
   color: #333;
   margin-bottom: 5px;
 }
 
-.card-header p {
+.signup-header p {
   font-size: 1rem;
   color: #666;
   margin-bottom: 30px;
 }
 
-.login-form {
+.signup-form {
   text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
 }
 
 .form-group {
@@ -85,6 +83,10 @@
   width: 100%;
 }
 
+.password-input input {
+  padding-right: 40px;
+}
+
 .password-toggle {
   position: absolute;
   right: 12px;
@@ -96,11 +98,18 @@
 }
 
 .form-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 25px;
   font-size: 0.9rem;
+  text-align: left;
+}
+
+.form-options a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.form-options a:hover {
+  text-decoration: underline;
 }
 
 .checkbox-container {
@@ -110,6 +119,7 @@
   cursor: pointer;
   color: #555;
   user-select: none;
+  margin-bottom: 15px;
 }
 
 .checkbox-container input {
@@ -153,16 +163,7 @@
   display: block;
 }
 
-.forgot-password {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-.forgot-password:hover {
-  text-decoration: underline;
-}
-
-.sign-in-button {
+.cta-button {
   width: 100%;
   padding: 12px;
   background-color: #4CAF50;
@@ -175,23 +176,60 @@
   margin-bottom: 20px;
 }
 
-.sign-in-button:hover {
+.cta-button:hover {
   background-color: #45a049;
 }
 
-.signup-link {
+.features-list {
+  background-color: #e6f7e9;
+  border: 1px solid #c0e6c5;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.features-list h4 {
+  font-size: 1rem;
+  color: #4CAF50;
+  margin: 0 0 10px 0;
+}
+
+.features-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features-list li::before {
+  content: "✔";
+  color: #4CAF50;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.already-account-link {
   text-align: center;
   font-size: 0.9rem;
   color: #555;
 }
 
-.signup-link a {
+.already-account-link a {
   color: #4CAF50;
   text-decoration: none;
   font-weight: 500;
 }
 
-.signup-link a:hover {
+.already-account-link a:hover {
   text-decoration: underline;
 }
 .validation-error {
@@ -200,81 +238,7 @@
   margin-top: 5px;
   text-align: left;
 }
-.sign-in-button:disabled {
+.cta-button:disabled {
   background-color: #a5d6a7; /* A lighter shade of green */
   cursor: not-allowed;
-}
-
-.navbar {
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  top: 0;
-  left: 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.logo-icon {
-  background: #008000;
-  color: white;
-  padding: 6px;
-  border-radius: 4px;
-  margin-right: 8px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: #008000;
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.login {
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.login:hover {
-  color: #008000;
-}
-
-.register {
-  background: #008000;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.register:hover {
-  background: #006400;
 }
