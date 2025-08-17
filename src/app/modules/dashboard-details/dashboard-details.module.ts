@@ -10,7 +10,7 @@ import { DashboardDetailsComponent } from "src/app/areas/dashboard-details/dashb
     imports:[
         CommonModule,
         FormsModule,
-        ReactiveFormsModule,
+        ReactiveFormsModule, 
     ],
     exports:[
         DashboardDetailsComponent
