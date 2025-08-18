@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-left">
+      <button class="burger-menu-btn" (click)="toggleSidebar()">
+        ☰
+      </button>
+      <div class="logo">
+        <div class="logo-icon">📈</div>
+        <span>FinanceAI</span>
+      </div>
+    </div>
+    <div class="user-profile">
+      <div class="profile-info">
+        <span class="user-name">John Doe</span>
+        <span class="user-role">Administrator</span>
+      </div>
+      <div class="profile-avatar">JD</div>
+    </div>
+  </header>
+
+  <aside class="dashboard-sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a  class="nav-item" [class.active]="activePage==='dashboard'" (click)="setActivePage('dashboard')">Dashboard</a></li>
+        <li><a  class="nav-item" [class.active]="activePage==='categories'" (click)="setActivePage('categories')">Categories</a></li>
+        <li><a class="nav-item" [class.active]="activePage==='budget'" (click)="setActivePage('budget')">Budgeting</a></li>
+        <li><a href="#" class="nav-item">Watchlist</a></li>
+        <li><a href="#" class="nav-item">AI History</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <!-- Show only one at a time -->
+    <app-dashboard-details *ngIf="activePage==='dashboard'"></app-dashboard-details>
+    <app-add-categories *ngIf="activePage==='categories'"></app-add-categories>
+    <app-add-buget *ngIf="activePage==='budget'"></app-add-buget>
+  </main>
+</div>

@@ -1,0 +1,155 @@
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.burger-menu-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.logo-icon {
+  margin-right: 0.5rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-item {
+  display: block;
+  padding: 0.75rem 2rem;
+  color: #555;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.nav-item:hover, .nav-item.active {
+  background-color: #e6f7e9;
+  color: #4CAF50;
+  border-left-color: #4CAF50;
+}
+
+/* Existing styles */
+.dashboard-sidebar {
+  width: 250px;
+  background-color: #f7f9f7;
+  padding: 1rem 0;
+  transition: width 0.3s ease;
+  overflow: hidden; /* Helps with hiding content */
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+/* New CSS for collapsed state */
+.dashboard-container.collapsed .dashboard-sidebar {
+  width: 60px; /* Reduced width */
+}
+
+.dashboard-container.collapsed .nav-item {
+  padding: 0.75rem 1rem;
+}
+
+.dashboard-container.collapsed .sidebar-nav a {
+  /* Hide the text while keeping the link clickable */
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+  position: relative;
+}
+.dashboard-container.collapsed .sidebar-nav a:before {
+  text-indent: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #555;
+}
+
+
+.dashboard-container.collapsed .main-content {
+  margin-left: 60px; /* Adjusted margin to match collapsed sidebar width */
+}
+.sidebar-nav .nav-item.active {
+  font-weight: bold;
+  color: #4f80ff;
+}

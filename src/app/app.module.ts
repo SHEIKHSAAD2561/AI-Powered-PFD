@@ -3,14 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthenticationAndAuthorizationComponent } from './areas/Authentication&Authorization/authentication-and-authorization/authentication-and-authorization.component';
+import { AuthenticationAndAuthorizationModule } from './modules/Authentication&Authorization/authentication-and-authorization.module';
+import { HomeComponent } from './areas/home/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthenticationAndAuthorizationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

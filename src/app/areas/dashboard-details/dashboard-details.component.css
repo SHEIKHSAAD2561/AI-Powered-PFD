@@ -1,0 +1,217 @@
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  color: #333;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Base card styling for all cards */
+.card-base {
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-base:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.card-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+/* Top card specific styling */
+.expenses-card {
+  background: linear-gradient(135deg, #4f80ff, #5a64ff);
+  color: #fff;
+}
+
+.savings-card {
+  background: linear-gradient(135deg, #32cd32, #2ecc71);
+  color: #fff;
+}
+
+.expense-category-card {
+  background: linear-gradient(135deg, #ff7f50, #ff6b81);
+  color: #fff;
+}
+
+.currency-card {
+  background: linear-gradient(135deg, #8a2be2, #9400d3);
+  color: #fff;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pie-chart-wrapper,
+.line-chart-wrapper {
+  flex: 1;
+  min-width: 400px;
+  max-width: 50%;
+}
+
+.chart-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.widgets-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.budget-usage-wrapper,
+.watchlist-wrapper {
+  flex: 1;
+}
+
+/* Budget and Watchlist card styling */
+.buger-card,
+.watchlist-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
+.p-progressbar-label {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.watchlist-card .p-datatable-thead > tr > th {
+  background-color: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  color: #666;
+  font-weight: normal;
+  padding: 1rem 0.5rem;
+}
+
+.watchlist-card .p-datatable-tbody > tr > td {
+  border: none;
+  padding: 1rem 0.5rem;
+}
+
+.green-text {
+  color: #32cd32;
+}
+
+.red-text {
+  color: #ff6b81;
+}
+
+.pi {
+  font-size: 1rem;
+}
+
+.pi-caret-up {
+  color: #32cd32;
+}
+
+.pi-caret-down {
+  color: #ff6b81;
+}
+.budget-item
+{
+  padding-bottom: 10px;
+}
+.ai-coach-card {
+ background-color: #fff;
+ border-radius: 10px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ padding: 1.5rem;
+}
+
+.ai-coach-title {
+ font-size: 1.5rem;
+ font-weight: bold;
+ margin-bottom: 1rem;
+ color: #333;
+}
+
+.ai-coach-tip {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ margin-bottom: 1rem;
+ color: #555;
+}
+
+.emoji {
+ font-size: 1.2rem;
+ margin-right: 0.5rem;
+}
+
+.tip-heading {
+ font-size: 1.1rem;
+ font-weight: bold;
+ color: #333;
+ margin: 0;
+}
+
+.tip-text {
+ font-size: 1rem;
+ line-height: 1.4;
+ margin: 0;
+}
+
+.ask-coach-button {
+ background-color: #3366FF; /* Example blue color */
+ color: #fff;
+ border: none;
+ border-radius: 5px;
+ padding: 0.75rem 1rem;
+ font-size: 1rem;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+ width: 100%; /* Make the button full width */
+ display: block; /* Ensure it takes full width */
+ text-align: center; /* Center the text */
+}
+
+.ask-coach-button:hover {
+ background-color: #2449B5;
+}
