@@ -3,28 +3,103 @@
   <p class="subtitle">Welcome to your FinanceAI dashboard. Select an item from the menu to get started.</p>
 
   <div class="cards-container">
-    <div class="card expenses-card">
+    <div class="card-base expenses-card">
       <div class="card-title">Total Expenses</div>
       <div class="card-value">${{ totalExpenses }}</div>
       <div class="card-description">{{ expensesChange }}</div>
     </div>
 
-    <div class="card savings-card">
+    <div class="card-base savings-card">
       <div class="card-title">Total Savings</div>
       <div class="card-value">${{ totalSavings }}</div>
       <div class="card-description">{{ savingsMessage }}</div>
     </div>
 
-    <div class="card expense-category-card">
+    <div class="card-base expense-category-card">
       <div class="card-title">Biggest Expense Category</div>
       <div class="card-value"><i class="fas fa-shopping-basket"></i> {{ biggestExpenseCategory }}</div>
       <div class="card-description">{{ biggestExpensePercentage }}% of budget</div>
     </div>
 
-    <div class="card currency-card">
+    <div class="card-base currency-card">
       <div class="card-title">Currency Spot Rate</div>
       <div class="card-value">1 USD</div>
       <div class="card-description"><i class="fas fa-dollar-sign"></i> {{ usdToPkrRate }} PKR</div>
     </div>
+  </div>
+
+  <div class="charts-container">
+    <div class="pie-chart-wrapper card-base">
+      <h3 class="chart-header">Expenses by Category</h3>
+      <p-chart type="pie" [data]="data" [options]="options" />
+    </div>
+    <div class="line-chart-wrapper card-base">
+      <h3 class="chart-header">Spending Trend</h3>
+      <p-chart type="line" [data]="linechartdata" [options]="lineChartOptions" />
+    </div>
+  </div>
+
+  <div class="widgets-container">
+    <div class="budget-usage-wrapper buger-card">
+      <h3 class="chart-header">Budget Usage</h3>
+      <div class="budget-item">
+        <span>Food</span>
+        <p-progressBar [value]="80" class="budget-progress-bar" [showValue]="true"></p-progressBar>
+      </div>
+      <div class="budget-item">
+        <span>Bills</span>
+        <p-progressBar [value]="60" class="budget-progress-bar" [showValue]="true"></p-progressBar>
+      </div>
+      <div class="budget-item">
+        <span>Travel</span>
+        <p-progressBar [value]="90" class="budget-progress-bar" [showValue]="true"></p-progressBar>
+      </div>
+      <div class="budget-item">
+        <span>Others</span>
+        <p-progressBar [value]="50" class="budget-progress-bar" [showValue]="true"></p-progressBar>
+      </div>
+    </div>
+
+    <div class="watchlist-wrapper watchlist-card">
+      <h3 class="chart-header">Watchlist</h3>
+      <p-table [value]="watchlistData" [tableStyle]="{'min-width': '10rem'}">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>SYMBOL</th>
+            <th>B.C.</th>
+            <th>24H</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+          <tr>
+            <td>{{ item.symbol }}</td>
+            <td>{{ item.currentValue }}</td>
+            <td [ngClass]="{'green-text': item.change24h > 0, 'red-text': item.change24h < 0}">
+              {{ item.change24h | number:'1.1-1' }}%
+            </td>
+            <td>
+              <i class="pi" [ngClass]="{'pi-caret-up': item.change24h > 0, 'pi-caret-down': item.change24h < 0}"></i>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
+<div class="charts-container">
+  <div class="pie-chart-wrapper card-base">
+    <div class="ai-coach-card">
+      <h3 class="ai-coach-title">AI Money Coach</h3>
+      <div class="ai-coach-tip">
+        <span class="emoji">💡</span>
+        <h4 class="tip-heading">Tip of the Day</h4>
+        <p class="tip-text">Set on automatic transfer of <strong>$100</strong> to your savings account at the end of
+          each month.</p>
+      </div>
+      <button class="ask-coach-button">Ask AI Coach </button>
+    </div>
+  </div>
+  <div class="line-chart-wrapper card-base">
+
   </div>
 </div>

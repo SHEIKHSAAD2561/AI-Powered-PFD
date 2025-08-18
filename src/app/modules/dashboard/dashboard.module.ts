@@ -7,6 +7,9 @@ import { NavigationBarModule } from "../nav-bar/nav-bar.module";
 import { DashboardComponent } from "src/app/areas/dashboard/dashboard.component";
 import { DashboardRoutingModule } from "src/app/routings/dashboard/dashboard-routing.module";
 import { DashboardDetailModule } from "../dashboard-details.module.ts/dashboard-details.module";
+import { AddCategoriesModule } from "../add-categories/add-categories.module";
+import { AddBudgetModule } from "../add-budget/add-budget.module";
+
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { DashboardDetailModule } from "../dashboard-details.module.ts/dashboard-
         ReactiveFormsModule,
         DashboardRoutingModule,
         NavigationBarModule,
-        DashboardDetailModule
+        DashboardDetailModule,
+        AddCategoriesModule,
+        AddBudgetModule
     ],
     exports:[
         DashboardComponent
